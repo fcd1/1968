@@ -1,0 +1,472 @@
+@import url('reset.css');
+
+body {font: 12px Verdana, Arial, sans-serif; color:#000; background:#eee; }
+
+#headNav {
+	background-color:#2d2a62;
+	color:#fff;
+	border-bottom:1px solid #eee;
+	margin-bottom:5px;
+}
+A.topNavbarLink:link, A.topNavbarLink:hover, A.topNavbarLink:visited, A.topNavbarLink:visited:hover   {
+	color:#fff;
+	text-decoration:none;
+	font-size:11px;
+}
+#omeka-logo {
+	text-decoration:none;
+}
+
+h1.exhHeader {
+        font-size:32px;
+        vertical-align:middle;
+        color:#ffffff;
+        /*text-transform:uppercase;*/
+        font-family: "Times New Roman", Times, Serif;
+        text-decoration:none;
+        font-weight:normal;
+        padding:100px 0 0 25px;
+}
+h1.exhHeader A, h1.exhHeader A:visited {
+        color:#fff;
+        text-decoration:none;
+}
+.headBack {
+        background:#000;
+        height:140px;
+        overflow:hidden;
+}
+
+h1, h2, h3, h4, h5 {color:#661e19; padding:8px 0 5px 0;}
+h1.head {font-family:"Trebuchet MS"; font-size:22px;padding:10px;background-color:#000;border-bottom:10px solid #a4924a; color:#fff;}
+h1 {font-family:"Trebuchet MS"; font-size:22px;color:#661e19;}
+h1.head A { color:#fff; }
+h2 {font-size:2em; color: #661e19; /*margin-bottom:1.25em; line-height:1.125em;*/}
+h3 {font-size:1em; font-weight:bold;padding-top:15px; /*margin-bottom:1.2857em; line-height:1.2857em;clear: both;*/}
+h5 {float: right;padding:1em 1em;}
+table.layoutTable {
+	border-top:10px solid #ccc;
+	width:100%;
+}
+.layoutTable TD {
+	vertical-align:top;
+}
+
+TD.content {
+	padding-left:2em;
+}
+a img {border:none;}
+p,ul,ol,dl {font-size:1em; margin-bottom:1.5em;/*line-height:1.8em;*/}
+p {padding: 0 18px 0 0;}
+i,em { font-size:1em; font-style:italic; }
+b,strong { font-size:1em; font-weight:bold; }
+
+a:link {color:#661e19; /*003399;*/}
+a:visited {color: #661e19;}
+a:hover {color: #661e19; text-decoration: none;}
+	h1 a, h1 a:visited {text-decoration: none;color:#fff;}
+	h5 a, h5 a:visited {color: #661e19;}
+
+/* == Structure == */
+#wrap {width:950px; margin:0px auto; overflow:hidden;background-color:#fff;border:1px solid #ccc;}
+#header {clear: both;padding:0; margin: 0;overflow: hidden;}
+.exhibit-nav { background: #661e19; text-align:top;}
+#exhibit-nav { float: left;padding: 0; /* 18px; */width:215px;}
+#content {/*float: right;overflow: hidden;*/min-height:400px;width: 713px; padding:0 18px; border-left: 1px solid #c7b5a2;background:#fff;}
+#footer {clear: both;padding:0;margin:0;margin-top:5px;color:#fff;background-color:#2d2a62;font-size:11px;min-height:18px;vertical-align:middle; border-top:1px solid #eee;}
+	#footer a {color: #fff;}
+	#footer a:visited {color: #fff;}
+		
+/* =Exhibit Navigation= */	
+.exhibit-section-nav {width:215px;overflow:hidden; }
+	.exhibit-section-nav li {width:auto;list-style-type:none;display:block; text-align:left;padding:0.5em 0;line-height:1.5em;}
+/* fcd1, 8/20/13: Changed width from 100% to auto to fix the link text going beyond the edge of the container */
+	.exhibit-section-nav li a {width:auto;color:#fff; display:block;text-decoration:none;padding:0.5em 0.5em 0.5em 1em}
+
+	.exhibit-section-nav .current a, .exhibit-section-nav .current a:visited {
+		background:#cccccc;	
+		color:#661e19;
+		font-weight:bold;
+	}
+
+.exhibit-section-nav li a:hover,.exhibit-section-nav li a:visited:hover {
+	font-weight:bold;
+	color: #661e19;
+	background-color:#cccccc;
+
+}
+	.exhibit-nested-section .current a, .exhibit-nested-section .current a:visited { 
+		font-weight:bold;
+	}	
+	.exhibit-nested-section .current a:hover, .exhibit-nested-section .current a:visited:hover {
+		font-weight:bold;
+	}	
+
+/* = previous/next = */
+#exhibit-page-navigation {
+	font-size:11px;
+	color:#369;
+	padding:6px;
+	margin:6px;
+	clear:both;
+	text-align:right;
+	/*	width:90%; */
+	width:inherited;
+}
+/* =Page Navigation= */
+        .exhibit-page-nav {list-style-type:square;padding:1px; width:100%;padding-top:0px;margin-top:-12px; }
+	.exhibit-child-nav li, .exhibit-page-nav li {display:block;margin-top:0px; margin-left:1.5em; text-align: left; padding-bottom:6px;} 
+	.exhibit-page-nav li a {text-decoration:none; color:#eee;}
+	.exhibit-page-nav li a:hover {text-decoration:underline;}
+.exhibit-child-nav li.current, 
+.exhibit-child-nav li.current a,
+.exhibit-child-nav li.current a:visited,
+.exhibit-page-nav li.current, 
+.exhibit-page-nav li.current a,
+.exhibit-page-nav li.current a:visited  { 
+    color: #fff; font-weight:bold;
+}
+	.exhibit-page-nav li.current a:hover, .exhibit-page-nav li.current a:visited:hover { color:#fff; text-decoration:underline;}
+
+/* == nested sections == */
+	.exhibit-nested-section .exhibit-page-nav a, 
+	.exhibit-nested-section .exhibit-page-nav a:visited, 
+	.exhibit-nested-section .exhibit-page-nav a:hover,
+	.exhibit-nested-section .exhibit-page-nav a:visited:hover { 
+		font-weight:normal; 
+		color: #ffffff;
+		background: none;
+		padding-bottom:1px;
+	}
+	.exhibit-nested-section .exhibit-page-nav .current a, 
+	.exhibit-nested-section .exhibit-page-nav .current a:visited,
+	.exhibit-nested-section .exhibit-page-nav .current a:hover,
+	.exhibit-nested-section .exhibit-page-nav .current a:visited:hover {
+		font-weight:bold; 
+		color: #ffffff;
+		background:none;
+		padding-bottom:1px;
+	}
+
+/* == Content == */
+#exhibit-sections h3 { margin: 5px 0 0 0; padding:0px; font-weight:bold;font-size: 1.2em; letter-spacing: .1em;}
+#exhibit-sections h3 a,#exhibit-sections h3 a:visited {text-decoration: none;color: #661e19;}
+#exhibit-sections h3 a:hover {color: #dbcab1;}
+#exhibit-sections p {/*margin: 0 0 1.8em; padding: 0 18px 0 0;*/}
+	
+.commentary {background:#eee; padding:18px;}
+	.commentary p {font-size:1.1em; line-height:1.63636;}
+	
+/* == Layout == */
+.gallery-full-left,
+.gallery-full-right,
+.gallery-thumbnails,
+.gallery-thumbnails-text-bottom,
+.gallery-thumbnails-text-top,
+.image-list-left,
+.image-list-left-thumbs,
+.image-list-right,
+.image-list-right-thumbs,
+.text-full,
+.text-image-left,
+.text-image-right
+	{clear: both;}
+
+.gallery-thumbnails .exhibit-item,
+.gallery-thumbnails-text-bottom .exhibit-item,
+.gallery-thumbnails-text-top .exhibit-item {
+	text-align:center;
+}
+/* for large left photos */
+
+.gallery-full-left .primary  img.full, .gallery-full-right .primary img.full{
+	width:350px;
+	height:auto;
+}
+/*
+.gallery-thumbnails-text-top .secondary .exhibit-item,
+.gallery-thumbnails-text-bottom .secondary .exhibit-item 
+{
+display: block;
+float: left;
+width: 170px;
+height: 170px;
+padding-top: 18px;
+margin-right: 18px;
+margin-bottom: 18px;
+overflow:hidden;
+}
+*/
+/*
+.item img, .exhibit-item img {
+    margin-bottom: 1.5em;
+
+	}
+
+.image-list-left .exhibit-item, 
+.image-list-right .exhibit-item, 
+.image-list-left-thumbs .exhibit-item,
+.image-list-right-thumbs .exhibit-item
+{
+	margin-top:10px;
+	border-bottom:1px solid #eee;
+}
+*/
+
+/* LAYOUT: TEXT-IMAGE-LEFT AND LAYOUT; TEXT-IMAGE-RIGHT */
+.text-image-left IMG, .text-image-right IMG {
+	width:300px;
+}
+/* LAYOUT: IMAGE-LIST-LEFT AND LAYOUT: IMAGE-LIST-RIGHT */
+.image-list-left .image-text-group, .image-list-right .image-text-group {
+        width:auto;
+}
+.image-list-left IMG.full  {
+        width:400px;
+        height:auto;
+        float:left;
+ }
+
+.image-list-left .exhibit-text  {
+        width:300px;
+        height:auto;
+        float:right;
+}
+
+.image-list-right IMG.full {
+        width:400px;
+        height:auto;
+        float:right;
+}
+.image-list-right .exhibit-text  {
+        width:300px;
+        height:auto;
+        float:left;
+}
+.image-list-left .exhibit-item, .image-list-right .exhibit-item {
+        margin-top:10px;
+        /*border-bottom:1px solid #eee;*/
+}
+/* generic */
+.image-text-group {
+        clear:both;
+        border-bottom:1px solid #eee;
+}
+
+/* LAYOUT: IMAGE-LIST-LEFT-THUMBS AND LAYOUT: IMAGE-LIST-RIGHT-THUMBS */
+.image-list-left-thumbs .exhibit-item {
+        float:left;
+        width:200px;
+        padding:5px;
+}
+.image-list-left-thumbs .exhibit-text {
+        float:right;
+        width:400px;
+        padding:5px;
+}
+.image-list-right-thumbs .exhibit-item {
+        float:right;
+        width:200px;
+        padding:5px;
+}
+.image-list-right-thumbs .exhibit-text {
+        float:left;
+        width:400px;
+        padding:5px;
+}
+
+/* generic */
+.item img, .exhibit-item img {
+	margin-bottom: 1.5em;
+    /* fcd1, 8/20/13: added max-width:100% */
+	max-width:100%;
+}
+
+
+
+
+/* == Item Show == */
+.item-title {padding-left: 0;margin-top: 0;}
+.field {padding-bottom: 1em;}
+.field-value {padding-left: 1.5em;margin-top: 0.75em;}
+.tags {margin-bottom: 1em;}
+#item-files {margin-bottom:1.5em;text-align:center;}
+.item-file {
+	background:#eee;
+	text-align:center;
+	padding:5px;
+	margin-bottom:1.5em;
+}
+
+.footer11px A, .footer11px A:visited { color:#999999; }
+#solidBlock {
+	background-color:#661e19; //#5d6670; #4f474b;
+	width:744px;overflow:hidden;margin-left:-20px;
+	text-align:right;
+}
+#solidBlock h1 {
+	color:#fff;
+	font-family:"Trebuchet MS"; font-size:22px;color:#fff;
+	border:none;
+	background-color:transparent;
+	padding:0;margin:0;
+}
+#solidBlock A {
+	color:#fff;
+}
+#solidBlockSecondary {
+	background-color:#661e19;
+	height:auto;
+}
+#primary H1 {
+	font-size:22px; color: #661e19; margin-bottom:1.25em; line-height:1.125em; border-bottom:1px solid #661e19;
+}
+#primary H2 {
+	font-size:1.5em; color: #661e19; margin-bottom:1.25em; line-height:1.125em; font-weight:bold;
+}
+.element-set {
+	/*margin-top:-25px;*/
+}
+.element-set H2 {
+	display:none;
+}
+li.item-title {
+	font-weight:bold; 
+}
+.permalink IMG.full {
+        width:450px;
+        height:auto;
+}
+
+.bigImage {
+        width:450px;
+        padding-left:1px;padding-right:1px;margin:1px;
+        overflow:hidden;
+	display:inline;
+}
+.bigImage img {
+	width:450px;
+	height:auto;
+}
+.image-list-left .exhibit-item-img {
+	margin: 0 10px 10px 0;
+}
+DIV.element-text-empty {
+        display:none;
+}
+.gallery-full-right .primary .exhibit-item {
+}
+.tertiary {
+	clear:both;
+	display:block;
+}
+
+/* fcd1, 8/30/13: Need following here for the layout to render properluy when
+a top-level page displays the content of its first child page to mimic Omeka 1.5.3
+behavior */
+
+.image-list-left .image-text-group {
+    overflow:hidden;
+    zoom:1;
+}
+
+.image-list-left .exhibit-item {
+    float:left; 
+    width: 48%;
+    margin-bottom:2%;
+}
+
+.image-list-left .exhibit-item img {
+    max-width:100%;
+}
+
+.image-list-left .exhibit-text {
+    float:right;
+    width: 48%;
+}
+
+/* fcd1, 9/6/13: item.php stuff */
+#item-page-content td {
+	padding:20px;
+	background-color:#fff;
+}
+
+.item-file a {
+	float: right;
+	top: 0;	
+	margin-right: 50px;
+	margin-left: 5px;
+	padding: 5px;
+	text-align: center;
+/*	background: #eee; */
+	background: #fff;
+	width: 250px;
+}
+
+.item-file {
+	background-color:#fff;
+	margin-bottom:0px;
+}
+
+.item-file img {
+	background: #fff;
+}
+
+/* fcd1, 9/10/13 */
+.prevNext, 
+.prevNext A,
+.prevNext A:visited {
+	font-size: 11px;
+	color: #333;
+	text-align: right;
+	width: auto;
+	padding: 5px;
+	clear: both;
+	padding-right:10px;
+}
+
+.exhibit-child-nav li.current a {
+	background:inherit;
+}
+
+.exhibit-child-nav li a:hover,.exhibit-child-nav li a:visited:hover {
+	font-weight:normal;
+	color: #ffffff;
+	background-color:inherit;
+
+	text-decoration:underline;
+}
+
+.exhibit-child-nav li.current a:hover {
+	font-weight:bold;
+}
+
+.link-to-item-page {
+	display:block;
+	text-align:center;
+}
+
+/* fcd1, 9/26/13: needed to bring images above CUL widget top navbar */
+/* CUL widget (javascript) uses 1030, so go 1 up */
+div.highslide-container {
+    z-index: 1031 !important;
+}
+
+div#head-back-img {
+	width:100%;
+}
+
+.copyright-footer, .footer11px {
+    font-size: 11px;
+    width:98%;
+    text-align:center;
+    color:#999;
+}
+
+p.footer11px {
+    padding-top: 6px;
+}
+
+p.copyright-footer a {
+    color: inherit;
+}

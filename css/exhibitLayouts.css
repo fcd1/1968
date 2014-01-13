@@ -1,0 +1,266 @@
+/* fcd1, 9/4/13: This file exists because, when we try to mimic the omeka 1.5.3. behavior */
+/* where sections have no landing page and instead displays the content of the first */
+/* child page, we need to do the same for top-level pages. However, when we render the */
+/* the content from the child page, the css for that layout is not being loaded in. */
+/* therefore, here are the rules from the layout.css for each layout, with the rules */
+/* prefixed with the class name for the layout */
+
+
+/* CSS for the gallery-full-left layout */
+
+.gallery-full-left .primary,
+.gallery-full-left .secondary {
+    float:left;
+    width:49%;
+    overflow:hidden;
+    zoom:1;
+}
+
+.gallery-full-left .secondary {
+    float:right;
+}
+
+.gallery-full-left .gallery .exhibit-item {
+    display: inline-block;
+    vertical-align: top;
+    margin-right: 1%;
+    width: 48%;
+    /* IE 7 */
+    *display: inline;
+    zoom: 1;
+}
+
+.gallery-full-left .exhibit-item {
+    margin-bottom:2%;
+}
+
+.gallery-full-left .exhibit-item img {
+    max-width: 100%;
+}
+
+/* CSS for the gallery-full-right layout */
+
+
+.gallery-full-right .primary,
+.gallery-full-right .secondary {
+    float:right;
+    width:49%;
+    overflow:hidden;
+    zoom:1;
+}
+
+.gallery-full-right .secondary {
+    float:left;
+}
+
+.gallery-full-right .gallery .exhibit-item {
+    display: inline-block;
+    vertical-align: top;
+    margin-right: 1%;
+    width: 48%;
+    /* IE 7 */
+    *display: inline;
+    zoom: 1;
+}
+
+.gallery-full-right .exhibit-item {
+    margin-bottom:2%;
+}
+
+.gallery-full-right .exhibit-item img {
+    max-width: 100%;
+}
+
+/* CSS for the gallery-thumbnails layout */
+
+.gallery-thumbnails .exhibit-item {
+    display: inline-block;
+    vertical-align: top;
+    width: 23%;
+    margin-right: 1%;
+    margin-bottom: 2%;
+    /* IE 7 */
+    *display: inline;
+    zoom: 1;
+}
+
+.gallery-thumbnails .exhibit-item img {
+    max-width: 100%;
+}
+
+/* CSS for the gallery-thumbnails-text-bottom layout */
+
+.gallery-thumbnails-text-bottom .primary {
+    overflow:hidden;
+    zoom:1;
+}
+
+.gallery-thumbnails-text-bottom .secondary {
+    clear:both;
+}
+
+.gallery-thumbnails-text-bottom .exhibit-item {
+    display: inline-block;
+    vertical-align: top;
+    width: 23%;
+    margin-right: 1%;
+    margin-bottom: 2%;
+    /* IE 7 */
+    *display: inline;
+    zoom: 1;
+}
+
+.gallery-thumbnails-text-bottom .exhibit-item img {
+    max-width: 100%;
+}
+
+/* CSS for the gallery-thumbnails-text-top layout */
+
+.gallery-thumbnails-text-top .secondary {
+    overflow:hidden;
+    zoom:1;
+}
+
+.gallery-thumbnails-text-top .exhibit-item {
+    display: inline-block;
+    vertical-align: top;
+    width: 23%;
+    margin-right: 1%;
+    margin-bottom: 2%;
+    /* IE 7 */
+    *display: inline;
+    zoom: 1;
+}
+
+.gallery-thumbnails-text-top .exhibit-item img {
+    max-width: 100%;
+}
+
+/* CSS for the image-list-left layout */
+
+.image-list-left .image-text-group {
+    overflow:hidden;
+    zoom:1;
+}
+
+.image-list-left .exhibit-item {
+    float:left;
+    width: 48%;
+    margin-bottom:2%;
+}
+
+.image-list-left .exhibit-item img {
+    max-width:100%;
+}
+
+.image-list-left .exhibit-text {
+    float:right;
+    width: 48%;
+}
+
+/* CSS for the image-list-left-thumbs layout */
+
+.image-list-left-thumbs .image-text-group {
+    overflow:hidden;
+    zoom:1;
+}
+
+.image-list-left-thumbs .exhibit-item {
+    float:left;
+    width: 23%;
+    margin-bottom:2%;
+}
+
+.image-list-left-thumbs .exhibit-item img {
+    max-width:100%;
+}
+
+.image-list-left-thumbs .exhibit-text {
+    float:right;
+    width: 73%;
+}
+
+/* CSS for the image-list-right layout */
+
+.image-list-right .image-text-group {
+    overflow:hidden;
+    zoom:1;
+}
+
+.image-list-right .exhibit-item {
+    float:right;
+    width: 48%;
+    margin-bottom:2%;
+}
+
+.image-list-right .exhibit-item img {
+    max-width:100%;
+}
+
+.image-list-right .exhibit-text {
+    float:left;
+    width: 48%;
+}
+
+/* CSS for the image-list-right-thumbs layout */
+
+.image-list-right-thumbs .image-text-group {
+    overflow:hidden;
+    zoom:1;
+}
+
+.image-list-right-thumbs .exhibit-item {
+    float:right;
+    width: 23%;
+    margin-bottom:2%;
+}
+
+.image-list-right-thumbs .exhibit-item img {
+    max-width:100%;
+}
+
+.image-list-right-thumbs .exhibit-text {
+    float:left;
+    width: 73%;
+}
+
+/* CSS for the text layout */
+
+.text-full .primary {
+	width:auto;
+	float:none;
+}
+
+/* CSS for the text-image-left layout */
+
+text-image-left .image-left {
+    float: left;
+    width: 48%;
+    margin-right: 2%;
+    margin-bottom: 2%;
+}
+
+text-image-left .exhibit-item img {
+    max-width: 100%;
+}
+
+text-image-left .exhibit-item-caption p {
+    margin-bottom: 0;
+}
+
+/* CSS for the text-image-right layout */
+
+.text-image-right .image-right {
+    float: right;
+    width: 48%;
+    margin-left:2%;
+    margin-bottom:2%;
+}
+
+.text-image-right .exhibit-item img {
+    max-width: 100%;
+}
+
+.text-image-right .exhibit-item-caption p {
+    margin-bottom: 0;
+}
