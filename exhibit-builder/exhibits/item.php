@@ -17,9 +17,16 @@
       <tr>
         <td>
           <?php
+            // fcd1, 01/23/14
+            // Print a link back to the exhibit page containing the item,
+            // which will be the previous page, assuming we came in via
+            // the exhibit page. As an extra test, make sure that
+            // $http_previous contains the uri to the exhibit
             if (array_key_exists('HTTP_REFERER',$_SERVER)) {
               $http_previous = $_SERVER['HTTP_REFERER'];
-              echo '<a href="'.$http_previous.'">Return to exhibit page</a>';
+	      if (strstr($http_previous,exhibit_builder_exhibit_uri())) {
+		echo '<a href="'.$http_previous.'">Return to exhibit page</a>';
+	      }
             }
           ?>
           <h1 class="item-title">Item Information</h1>
