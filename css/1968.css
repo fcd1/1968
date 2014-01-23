@@ -400,7 +400,7 @@ behavior */
 	text-align: center;
 /*	background: #eee; */
 	background: #fff;
-	width: 250px;
+	width: 50%;
 }
 
 .item-file {
@@ -469,4 +469,39 @@ p.footer11px {
 
 p.copyright-footer a {
     color: inherit;
+}
+
+/* fcd1, 01/23/14: */
+/* following rule applies to display of item.php */
+/* item page reformat */
+.exhibit-item-show .item-file.image-jpeg .full {
+    width: 100%;
+}
+
+/* fcd1, 01/23/14: */
+/* following rule applies to display of item.php */
+/* item page reformat */
+.exhibit-item-show .item-file.image-jpeg a {
+    margin-right: 0px;
+}
+
+/* fcd1, 01/23/14: */
+/* following rule applies to display of item.php */
+/* item page reformat */
+.exhibit-item-show .element-set h3 {
+    padding: 5px 0 5px 0;
+}
+
+/* fcd1, 01/23/14: */
+/* following rule applies to display of item.php */
+/* item page reformat */
+.exhibit-item-show #primary .item-title {
+    margin-bottom: 2px;
+}
+
+/* fcd1, 01/23/14: */
+/* following rule applies to display of item.php */
+/* item page reformat */
+.exhibit-item-show .item-file {
+    padding: 0px;
 }
