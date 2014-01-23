@@ -505,3 +505,32 @@ p.copyright-footer a {
 .exhibit-item-show .item-file {
     padding: 0px;
 }
+
+/* fcd1, 01/23/14: */
+/* following rule applies to display of item.php */
+/* link back to exhibit and exhibit page */
+.exhibit-item-show h3.exhibit-title-link {
+        text-align: center;
+}
+
+/* fcd1, 01/23/14: */
+/* following rule applies to display of item.php */
+/* link back to exhibit and exhibit page */
+.exhibit-item-show .list-exhibit-pages h3 {
+    padding-top: 0px;
+    padding-bottom: 6px;
+}
+
+/* fcd1, 01/23/14: */
+/* following rule applies to display of item.php */
+/* link back to exhibit and exhibit page */
+.exhibit-item-show .list-exhibit-pages p {
+    margin-bottom: 1em;
+}
+
+/* fcd1, 01/23/14: */
+/* following rule applies to display of item.php */
+/* link back to exhibit and exhibit page */
+.exhibit-item-show #citation #citation-value {
+    margin-bottom: 0.5em;
+}

@@ -10,9 +10,18 @@
 
 <div id="item-page-content">
   <div id="primary" class="show">
+    <h3 class="exhibit-title-link">Exhibit: 
+    <?php echo exhibit_builder_link_to_exhibit(null,null,array('class' => 'link-to-exhibit')); ?>
+    </h3>
     <table>
       <tr>
         <td>
+          <?php
+            if (array_key_exists('HTTP_REFERER',$_SERVER)) {
+              $http_previous = $_SERVER['HTTP_REFERER'];
+              echo '<a href="'.$http_previous.'">Return to exhibit page</a>';
+            }
+          ?>
           <h1 class="item-title">Item Information</h1>
             <div id="itemfiles">
               <?php 
@@ -40,6 +49,7 @@
             <h3><?php echo __('Citation'); ?></h3>
             <p id="citation-value" class="field-value"><?php echo metadata('item', 'citation', array('no_escape' => true)); ?></p>
           </div>
+          <?php cul_display_links_to_exhibit_pages_containing_item(); ?>
         </td>
       </tr>
     </table>
