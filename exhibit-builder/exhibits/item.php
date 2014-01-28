@@ -17,16 +17,42 @@
       <tr>
         <td>
           <?php
-            // fcd1, 01/23/14
-            // Print a link back to the exhibit page containing the item,
-            // which will be the previous page, assuming we came in via
-            // the exhibit page. As an extra test, make sure that
-            // $http_previous contains the uri to the exhibit
+            // fcd1, 01/27/14
+            // Print a link back to the exhibit page containing the item..
+            // Unfortunately, from the item page, there is no way
+            // to get the exhibit page we came from - get_current_record('exhibit_page')
+            // returns an error. So, instead, we will see if the link to the previous
+            // page (use $_SERVER['HTTP_REFERER']) is a link to one of the pages
+            // which contains the item. This may not always be the case, since it is
+            // possible that the user arrived on the item page via a web search. In
+            // this case, do not print a link back to the exhibit page. 
             if (array_key_exists('HTTP_REFERER',$_SERVER)) {
               $http_previous = $_SERVER['HTTP_REFERER'];
-	      if (strstr($http_previous,exhibit_builder_exhibit_uri())) {
-		echo '<a href="'.$http_previous.'">Return to exhibit page</a>';
-	      }
+              $exhibit_pages = cul_return_exhibit_pages_containing_current_item();
+              $exhibit_page_containing_item = NULL;
+              foreach($exhibit_pages as $exhibit_page) {
+                $exhibit = $exhibit_page->getExhibit();
+                if ( (strstr($http_previous,exhibit_builder_exhibit_uri($exhibit, $exhibit_page))) ||
+                  // fcd1, 01/27/14:
+                  // add the following test for legacy exhibitions (from Omeka 1.5.3)
+                  // because the previous page may be a top-level page which displays the contents
+                  // of the first child page, to mimic the behavior of sections in Omeka 1.5.3
+                     (strstr($http_previous,
+                             exhibit_builder_exhibit_uri($exhibit,$exhibit_page->getFirstChildPage() )
+                            )
+                     )
+                   )
+                {
+                  $exhibit_page_containing_item = $exhibit_page;
+                  break;
+                }
+              }
+              if ($exhibit_page_containing_item) {
+                echo '<h3>View item in context</h3>';
+                echo '<p><a href="'.
+                  html_escape(exhibit_builder_exhibit_uri($exhibit, $exhibit_page_containing_item)).
+                  '">'.$exhibit->title.': '.$exhibit_page_containing_item->title.'</a></p>';
+              }
             }
           ?>
           <h1 class="item-title">Item Information</h1>
