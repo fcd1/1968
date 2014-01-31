@@ -29,7 +29,6 @@
               echo '<h3>View item in context</h3>';
               echo '<p><a href="'.
                 html_escape(exhibit_builder_exhibit_uri($exhibit, $exhibit_page_containing_item)).
-		//                '">'.$exhibit->title.': '.$exhibit_page_containing_item->title.'</a></p>';
                 '">'.$link_title.'</a></p>';
             }
 
