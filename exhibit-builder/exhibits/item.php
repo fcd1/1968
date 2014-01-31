@@ -1,9 +1,4 @@
 <?php
-  // fcd1, 8/27/13: foolowing file is based on plugins/ExhibitBuilder/views/public/exhibits/item.php
-  // with customization to match behavior of cul-teneral's item.php from OMeka 1.5.3
-?>
-
-<?php
   echo head(array('title' => metadata('item', array('Dublin Core', 'Title')),
 		  'bodyclass' => 'exhibits exhibit-item-show'));
 ?>
@@ -17,6 +12,8 @@
       <tr>
         <td>
           <?php
+            // fcd1, 01/31/14:
+            // Retrieve, in an array, the list of exhibit pages containing the current item.
             $exhibit_pages = CulCustomizePlugin::return_exhibit_pages_containing_current_item();
 
             // fcd1, 01/30/14
