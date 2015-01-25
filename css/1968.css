@@ -534,3 +534,9 @@ p.copyright-footer a {
 .exhibit-item-show #citation #citation-value {
     margin-bottom: 0.5em;
 }
+
+/* fcd1, 01/21/15: */
+/* Changes for move to Omeka 2.2.2 (and ExhibitBuilder 3.1.1) */
+.layout-file-text .exhibit-items {
+  max-width: 50%;
+}
