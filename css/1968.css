@@ -555,5 +555,9 @@ p.copyright-footer a {
   overflow: hidden;
 }
 
+.layout-gallery .gallery-showcase.left.with-right img {
+  width: 100%;
+}
+
 /* fcd1, Jan 2015: */
 /* END of Changes for move to Omeka 2.2.2 (and ExhibitBuilder 3.1.3) */
