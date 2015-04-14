@@ -586,6 +586,10 @@ p.copyright-footer a {
   margin-bottom: 0px;
 }
 
+.exhibits .layoutTable #primary div:last-of-type {
+  border-bottom: none;
+}
+
 /* fcd1, Jan 2015: */
 /* END of Changes for move to Omeka 2.2.2 (and ExhibitBuilder 3.1.3) */
 
