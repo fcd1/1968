@@ -68,7 +68,13 @@ a:hover {color: #661e19; text-decoration: none;}
 	h5 a, h5 a:visited {color: #661e19;}
 
 /* == Structure == */
-#wrap {width:950px; margin:0px auto; overflow:hidden;background-color:#fff;border:1px solid #ccc;}
+#wrap {
+	width:1190px;
+	margin:0px auto;
+	overflow:hidden;
+	background-color:#fff;
+	border:1px solid #ccc;
+}
 #header {clear: both;padding:0; margin: 0;overflow: hidden;}
 .exhibit-nav { background: #661e19; text-align:top;}
 #exhibit-nav { float: left;padding: 0; /* 18px; */width:215px;}
